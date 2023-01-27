@@ -28,6 +28,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <p style={{color:'red', fontSize: '96px'}}>Big Red Text!</p>
         <Greeting name="Shaun" numberOfMessages={5} />
         <PeopleList people={people} />
         <button onClick={() => { alert("Hello!") }}>Click Me!</button>
