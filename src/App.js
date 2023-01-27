@@ -1,35 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
-import { Greeting } from './Greeting';
-import { PeopleList } from './PeopleList';
+import logo from "./logo.svg";
+import "./App.css";
+import { Greeting } from "./Greeting";
+import { PeopleList } from "./PeopleList";
 
-const people = [{
-  name: 'John',
-  age: 40,
-  hairColor: 'brown',
-}, {
-  name: 'Helga',
-  age: 25,
-  hairColor: 'red',
-}, {
-  name: 'Dwayne',
-  age: 55,
-  hairColor: 'blonde',
-}]
+const people = [
+  {
+    name: "John",
+    age: 40,
+    hairColor: "brown",
+  },
+  {
+    name: "Helga",
+    age: 25,
+    hairColor: "red",
+  },
+  {
+    name: "Dwayne",
+    age: 55,
+    hairColor: "blonde",
+  },
+];
 
 function App() {
-  let adjective = 'cool';
-  let url = 'https://reactjs.org';
+  let adjective = "cool";
+  let url = "https://reactjs.org";
 
   return (
     <div className="App">
       <header className="App-header">
-        <Greeting name="Shaun" numberOfMessages={5}/>
+        <Greeting name="Shaun" numberOfMessages={5} />
         <PeopleList people={people} />
+        <button onClick={() => { alert("Hello!") }}>Click Me!</button>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          This is {adjective}!
-        </p>
+        <p>This is {adjective}!</p>
         <a
           className="App-link"
           href={url}
