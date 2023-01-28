@@ -1,28 +1,12 @@
 import logo from "./logo.svg";
 import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HomePage, CounterButtonPage, PeopleListPage } from "./pages";
 import { CongratulationsMessage } from "./CongratulationsMessage";
 import { CounterButton } from "./CounterButton";
 import "./App.css";
 import { Greeting } from "./Greeting";
 import { PeopleList } from "./PeopleList";
-
-const people = [
-  {
-    name: "John",
-    age: 40,
-    hairColor: "brown",
-  },
-  {
-    name: "Helga",
-    age: 25,
-    hairColor: "red",
-  },
-  {
-    name: "Dwayne",
-    age: 55,
-    hairColor: "blonde",
-  },
-];
 
 function App() {
   let adjective = "cool";
@@ -33,19 +17,13 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        {hideMessage ? null : (
-          <CongratulationsMessage
-            numberOfClicks={numberOfClicks}
-            threshold={10}
-            onHide={() => setHideMessage(true)}
-          />
-        )}
-        <CounterButton
-          onIncrement={increment}
-          numberOfClicks={numberOfClicks}
-        />
-      </header>
+      <Router>
+        <Routes>
+          <Route path="/" exact element={<HomePage/>} />
+          <Route path="/counter" element={<CounterButtonPage/>} />
+          <Route path="/people-list" element={<PeopleListPage/>} />
+        </Routes>
+      </Router>
     </div>
   );
 }
