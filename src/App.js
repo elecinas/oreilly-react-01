@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import { HomePage, CounterButtonPage, PeopleListPage } from "./pages";
+import { BrowserRouter as Router, Route, Routes, Link, Navigate } from "react-router-dom";
+import { HomePage, CounterButtonPage, PeopleListPage, NotFoundPage } from "./pages";
 import { CongratulationsMessage } from "./CongratulationsMessage";
 import { CounterButton } from "./CounterButton";
 import "./App.css";
@@ -25,6 +25,8 @@ function App() {
           <Route path="/" exact element={<HomePage/>} />
           <Route path="/counter" element={<CounterButtonPage/>} />
           <Route path="/people-list" element={<PeopleListPage/>} />
+          <Route path="/404" element={<NotFoundPage />} />
+          <Route path="*" element={<Navigate to="/404" />} />
         </Routes>
       </Router>
     </div>
