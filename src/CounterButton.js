@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
-export const CounterButton = () => {
-    const [ numberOfClicks, setNumberOfClicks ] = useState(0);
-    const increment = () => setNumberOfClicks(numberOfClicks + 1);
+export const CounterButton = ({onIncrement, numberOfClicks}) => {
 
     return(
         <>
             <p>You've clicked the button {numberOfClicks} times</p>
-            <button onClick={increment}>Click me!</button>
+            <button onClick={onIncrement}>Click me!</button>
         </>
     );
 }
