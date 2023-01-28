@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { HomePage, CounterButtonPage, PeopleListPage } from "./pages";
 import { CongratulationsMessage } from "./CongratulationsMessage";
 import { CounterButton } from "./CounterButton";
@@ -17,7 +17,10 @@ function App() {
 
   return (
     <div className="App">
+
       <Router>
+        <Link to="/counter">Go to Counter Page</Link>
+        <Link to="/people-list">Go to People List Page</Link>
         <Routes>
           <Route path="/" exact element={<HomePage/>} />
           <Route path="/counter" element={<CounterButtonPage/>} />
