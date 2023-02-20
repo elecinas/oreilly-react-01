@@ -8,7 +8,7 @@ export const CounterButtonPage = () => {
 
   const location = useLocation();
   const startingValue = queryString.parse(location.search).startingValue;
-  const [numberOfClicks, setNumberOfClicks] = useState(Number(startingValue));
+  const [numberOfClicks, setNumberOfClicks] = useState(Number(startingValue) || 0);
   const [hideMessage, setHideMessage] = useState(false);
   const increment = () => setNumberOfClicks(numberOfClicks + 1);
 
