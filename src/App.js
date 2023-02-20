@@ -7,6 +7,7 @@ import {
   NotFoundPage, 
   ProtectedPage,
   ControlledFormPage, 
+  UncontrolledFormPage,
 } from "./pages";
 import "./App.css";
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/people-list" element={<PeopleListPage/>} />
           <Route path="/protected" element={<ProtectedPage />} />
           <Route path="/controlled" element={<ControlledFormPage />} />
+          <Route path="/uncontrolled" element={<UncontrolledFormPage />} />
           <Route path="/404" element={<NotFoundPage />} />
           <Route path="*" element={<Navigate to="/404" />} />
         </Routes>
