@@ -8,6 +8,7 @@ import {
   ProtectedPage,
   ControlledFormPage, 
   UncontrolledFormPage,
+  UserProfilePage,
 } from "./pages";
 import { NavBar } from "./NavBar";
 import "./App.css";
@@ -24,6 +25,7 @@ function App() {
             <Route path="/counter" element={<CounterButtonPage/>} />
             <Route path="/people-list" element={<PeopleListPage/>} />
             <Route path="/protected" element={<ProtectedPage />} />
+            <Route path="/user" element={<UserProfilePage />} />
             <Route path="/controlled" element={<ControlledFormPage />} />
             <Route path="/uncontrolled" element={<UncontrolledFormPage />} />
             <Route path="/404" element={<NotFoundPage />} />

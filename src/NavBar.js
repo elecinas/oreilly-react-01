@@ -18,5 +18,8 @@ export const NavBar = () => (
         <li>
             <Link to="/uncontrolled">Uncontrolled Form</Link>
         </li>
+        <li>
+            <Link to="/user">User Profile</Link>
+        </li>
     </ul>
 );
