@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link, Navigate } from "react-router-dom";
 import { 
   HomePage, 
@@ -10,6 +10,7 @@ import {
   UncontrolledFormPage,
   UserProfilePage,
 } from "./pages";
+import { UserDataLoader } from "./UserDataLoader";
 import { NavBar } from "./NavBar";
 import "./App.css";
 
@@ -25,7 +26,11 @@ function App() {
             <Route path="/counter" element={<CounterButtonPage/>} />
             <Route path="/people-list" element={<PeopleListPage/>} />
             <Route path="/protected" element={<ProtectedPage />} />
-            <Route path="/user" element={<UserProfilePage />} />
+            <Route path="/user" element={
+              <UserDataLoader>
+                <UserProfilePage />
+              </UserDataLoader>
+            } />
             <Route path="/controlled" element={<ControlledFormPage />} />
             <Route path="/uncontrolled" element={<UncontrolledFormPage />} />
             <Route path="/404" element={<NotFoundPage />} />
