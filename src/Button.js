@@ -14,38 +14,46 @@ const StyledButton = styled.button`
   padding: 16px;
 `;
 
-// export const Button = ({children, buttonColor, ...props}) => {
+export const Button = ({children, buttonColor, ...props}) => {
+    return (
+        <StyledButton buttonColor={buttonColor} {...props}>{children}</StyledButton>
+    )
+}
+
+export const DangerButton = ({children, ...props}) => {
+    return <Button buttonColor="red" {...props}>{children}</Button>
+}
+
+export const SuccessButton = ({children, ...props}) => {
+    return <Button buttonColor="green" {...props}>{children}</Button>
+}
+
+// export class Button extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.buttonColor = props.buttonColor;
+//   }
+//   render() {
 //     return (
-//         <StyledButton buttonColor={buttonColor} {...props}>{children}</StyledButton>
-//     )
+//         <StyledButton buttonColor={this.buttonColor} {...this.props}>
+//              {this.props.children}
+//         </StyledButton>
+//     );
+//   }
 // }
 
-export class Button extends React.Component {
-  constructor(props) {
-    super(props);
-    this.buttonColor = props.buttonColor;
-  }
-  render() {
-    return (
-        <StyledButton buttonColor={this.buttonColor} {...this.props}>
-             {this.props.children}
-        </StyledButton>
-    );
-  }
-}
+// export class DangerButton extends Button {
+//   constructor(props) {
+//     super(props);
+//     this.buttonColor = "red";
+//   }
+// }
 
-export class DangerButton extends Button {
-  constructor(props) {
-    super(props);
-    this.buttonColor = "red";
-  }
-}
-
-export class SuccessButton extends Button {
-    constructor(props){
-        super(props);
-        this.buttonColor = "green";
-    }
-}
+// export class SuccessButton extends Button {
+//     constructor(props){
+//         super(props);
+//         this.buttonColor = "green";
+//     }
+// }
 
 
