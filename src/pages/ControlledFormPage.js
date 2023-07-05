@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "../Button";
 
 export const ControlledFormPage = () => {
     const [name, setName] = useState("");
@@ -28,14 +29,14 @@ export const ControlledFormPage = () => {
                     onChange={ e => setFavoriteColor(e.target.value) } 
                     value={favoriteColor} />
             </div>
-            <button onClick={ e => {
+            <Button buttonColor="green" onClick={ e => {
                 alert(`
                     Your name is ${name}
                     your email is ${email}
                     and your favorite color is ${favoriteColor}
                 `);
                 e.preventDefault();
-            }}>Submit</button>
+            }}>Submit</Button>
         </form>
     );
 }
