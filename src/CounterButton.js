@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Button } from './Button';
+import { DangerButton } from './Button';
 
 export const CounterButton = ({onIncrement, numberOfClicks}) => {
     console.log('CounterButton rendering!')
@@ -10,7 +10,7 @@ export const CounterButton = ({onIncrement, numberOfClicks}) => {
     return(
         <>
             <p>You've clicked the button {numberOfClicks} times</p>
-            <Button buttonColor="red" onClick={onIncrement}>Click me!</Button>
+            <DangerButton buttonColor="red" onClick={onIncrement}>Click me!</DangerButton>
         </>
     );
 }
