@@ -28,11 +28,7 @@ function App() {
             <Route path="/counter" element={<CounterButtonPage/>} />
             <Route path="/people-list" element={<PeopleListPage/>} />
             <Route path="/protected" element={<ProtectedPage />} />
-            <Route path="/user" element={
-              <UserDataLoader>
-                <UserProfilePage />
-              </UserDataLoader>
-            } />
+            <Route path="/user" element={<UserProfilePage />} />
             <Route path="/controlled" element={<ControlledFormPage />} />
             <Route path="/uncontrolled" element={<UncontrolledFormPage />} />
             <Route path="/404" element={<NotFoundPage />} />
