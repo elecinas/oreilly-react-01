@@ -12,12 +12,14 @@ import {
 } from "./pages";
 import { UserDataLoader } from "./UserDataLoader";
 import { NavBar } from "./NavBar";
+import { ThemeContext } from "./ThemeContext";
 import "./App.css";
 
 function App() {
 
   return (
-    <div className="App">
+    <ThemeContext.Provider value="light">
+      <div className="App">
       <Router>
         <NavBar />
         <div className="App-header">
@@ -39,6 +41,7 @@ function App() {
         </div>
       </Router>
     </div>
+    </ThemeContext.Provider>
   );
 }
 
